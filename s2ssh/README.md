@@ -1,5 +1,5 @@
 # s2ssh
-s2ssh is a Node.js script
+A simple OpenSSH client wrapper that connects with Scratch via cloud variables.
 ## Security concerns
 **Important!**  
 TBA  

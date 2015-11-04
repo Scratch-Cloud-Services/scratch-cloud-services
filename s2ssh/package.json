@@ -1,0 +1,19 @@
+{
+	"name": "s2ssh",
+	"version": "0.6.0-alpha",
+	"description": "A simple OpenSSH client wrapper that connects with Scratch via cloud variables",
+	"keywords": [
+		"scratch", "cloud", "variables", "openssh", "ssh"
+	],
+	"license": "MIT",
+	"author": "Jonathan50",
+	"contributors": ["Jonathan50"],
+	"bin": "nodejs s2ssh.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Scratch-Cloud-Services/scratch-cloud-services.git"
+	},
+	"dependencies": {
+		"scratch-api": ">=1.1.0"
+	}
+}
