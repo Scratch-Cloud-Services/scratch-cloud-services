@@ -9,4 +9,7 @@ TBA
 npm install https://github.com/Scratch-Cloud-Services/scratch-cloud-services/raw/s2ssh/s2ssh/s2ssh.tar.gz
 ```
 ## Usage
-**Important!** Make sure to read the [Security Concerns](#security-concerns) first.
+**Important!** Make sure to read the [Security Concerns](#security-concerns) first.  
+```
+s2ssh project-id [username@]host
+```

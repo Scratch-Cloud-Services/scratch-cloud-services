@@ -11,8 +11,7 @@ var child_process = require('child_process');
 /*** parse command line arguments ***/
 if(process.argv.length < 4) {
 	console.error('Error: required arguments\n');
-	console.log('Usage: %s s2ssh.js project-id [username@]host',
-							process.argv[0]);
+	console.log('Usage: s2ssh project-id [username@]host');
 	process.exit(1);
 }	
 
