@@ -10,6 +10,7 @@ Please be certain the whitelists and blacklists are properly configured.
 ### Possible attacks
 * Brute-forcing the password of `root` or other users
 Defence: Do not whitelist `su` or `sudo`
+
 ## Installation
 **Warning! Pre-releases may have security holes!**
 Development build:
