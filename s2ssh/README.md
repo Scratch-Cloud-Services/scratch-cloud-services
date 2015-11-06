@@ -32,6 +32,7 @@ mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scr
 On Windows remove the `sudo` part.
 ## Usage
 **Important!** Make sure to read the [Security Concerns](#security-concerns) first.  
+### Syntax
 ```sh
 s2ssh project-id [username@]host
 ```
