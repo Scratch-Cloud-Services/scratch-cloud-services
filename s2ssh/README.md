@@ -8,8 +8,9 @@ If you find a security hole, please report it on the [issue tracker](https://git
 By running this script you are making your target machine vulnerable.  
 Please be certain the whitelists and blacklists are properly configured.  
 ### Possible attacks
-* Brute-forcing the password of `root` or other users
+* Brute-forcing the password of `root` or other users  
 Defence: Do not whitelist `su` or `sudo`
+
 ## Installation
 **Warning! Pre-releases may have security holes!**
 Development build:
