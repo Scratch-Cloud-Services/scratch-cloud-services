@@ -57,5 +57,20 @@ If you get an error, most likely the same account is looking at the project.
 ```sh
 make
 ```
+## Client project
+The client project for the Scratch side is freely available [here][1] under a [CC BY-SA 2.0][2] license.
+## Credits
+> Thanks to @trumank for making [scratch-api][3]  
+> Thanks to the Node.js Foundation for making [Node.js][4]
+> Thanks to Google for making [V8][5], the JavaScript engine behind Node.js  
+> Thanks to @BookOwl for creating the [Scratch Cloud Services][6] project  
+> And thanks to all contributors who helped  
+> s2ssh is available under a [MIT License][7]  
 
 [1]: http://scratch.mit.edu/projects/86107164/
+[2]: http://creativecommons.org/licenses/by-sa/2.0/deed.en
+[3]: http://github.com/trumank/scratch-api
+[4]: http://nodejs.org/
+[5]: https://developers.google.com/v8/
+[6]: https://github.com/Scratch-Cloud-Services
+[7]: https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/LICENSE
