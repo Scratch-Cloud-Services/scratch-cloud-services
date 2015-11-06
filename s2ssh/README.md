@@ -29,12 +29,33 @@ or: (*nix only)
 ```sh
 mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz -O - | tar -xz -C s2ssh && sudo npm install -g s2ssh && rm -rf s2ssh
 ```
+On Windows remove the `sudo` part.
 ## Usage
 **Important!** Make sure to read the [Security Concerns](#security-concerns) first.  
 ```sh
 s2ssh project-id [username@]host
 ```
+First you need to copy the [Scratch client project][1].  
+Then obtain the project ID by looking at the URL.  
+If the URL to the project is `https://scratch.mit.edu/projects/123456/`, then `123456` is the project ID.
+Then decide on a remote host.  
+It would be wise to set up a Virtual Machine running a Linux distro.  
+You may like to avoid putting your name anywhere on the virtual machine.  
+Set up a user with very little permissions.  
+If your project ID is `123456`, and your username and host is `orcs@mordor`, your command will be:
+```sh
+s2ssh 123456 orcs@mordor
+```
+The first time you run it you will be prompted for Scratch username and password.  
+Note that these will be saved in a file called `.scratchSession`.  
+You may prefer to use an alternative account if you want to look at the project.  
+To look at the project you will need a *Scratcher* account. It does not matter whether the account on the server is Scratcher or New Scratcher.  
+You may then be prompted for remote host password or your key's password.  
+Enter them.  
+If you get an error, most likely the same account is looking at the project.
 ## Package
 ```sh
 make
 ```
+
+[1]: http://scratch.mit.edu/projects/86107164/
