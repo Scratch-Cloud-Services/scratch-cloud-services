@@ -1,6 +1,6 @@
 {
 	"name": "s2ssh",
-	"version": "0.6.1-alpha",
+	"version": "0.6.2-alpha",
 	"description": "A simple OpenSSH client wrapper that connects with Scratch via cloud variables",
 	"keywords": [
 		"scratch", "cloud", "variables", "openssh", "ssh"

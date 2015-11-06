@@ -15,11 +15,11 @@ Defence: Do not whitelist `su` or `sudo`
 **Warning! Pre-releases may have security holes!**  
 Development build:
 ```sh
-npm install https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz
+sudo npm install https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz
 ```
 Stable build:
 ```sh
-npm install https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz
+sudo npm install https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz
 ```
 ## Usage
 **Important!** Make sure to read the [Security Concerns](#security-concerns) first.  
