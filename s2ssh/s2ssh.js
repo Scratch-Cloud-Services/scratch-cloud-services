@@ -17,7 +17,7 @@ if(process.argv.length < 4) {
 
 // get arguments
 var project  = process.argv[2],
-		host     = process.argv[3];
+    host     = process.argv[3];
 
 /*** server ***/
 var cloudSession; // Scratch cloud session
