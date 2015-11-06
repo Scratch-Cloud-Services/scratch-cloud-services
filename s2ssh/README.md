@@ -12,7 +12,7 @@ Please be certain the whitelists and blacklists are properly configured.
 Defence: Do not whitelist `su` or `sudo`
 
 ## Installation
-**Warning! Pre-releases may have security holes!**
+**Warning! Pre-releases may have security holes!**  
 Development build:
 ```sh
 npm install https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz
