@@ -36,6 +36,7 @@ On Windows remove the `sudo` part.
 ```sh
 s2ssh project-id [username@]host
 ```
+### Tutorial
 First you need to copy the [Scratch client project][1].  
 Then obtain the project ID by looking at the URL.  
 If the URL to the project is `https://scratch.mit.edu/projects/123456/`, then `123456` is the project ID.
