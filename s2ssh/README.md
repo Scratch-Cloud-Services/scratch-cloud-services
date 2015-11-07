@@ -9,7 +9,7 @@ By running this script you are making your target machine vulnerable.
 Please be certain the whitelists and blacklists are properly configured.  
 ### Possible attacks
 * Brute-forcing the password of `root` or other users  
-Defence: Do not whitelist `su` or `sudo`
+Defense: Do not whitelist `su` or `sudo`
 
 ## Installation
 **Warning! Pre-releases may have security holes!**  
@@ -17,7 +17,7 @@ Defence: Do not whitelist `su` or `sudo`
 ```sh
 sudo npm install -g https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz
 ```
-or: (*nix only)
+or: (\*nix only)
 ```sh
 mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz -O - | tar -xz -C s2ssh && sudo npm install -g s2ssh && rm -rf s2ssh
 ```
@@ -25,7 +25,7 @@ mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scr
 ```sh
 sudo npm install -g https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz
 ```
-or: (*nix only)
+or: (\*nix only)
 ```sh
 mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz -O - | tar -xz -C s2ssh && sudo npm install -g s2ssh && rm -rf s2ssh
 ```
@@ -51,7 +51,7 @@ s2ssh 123456 orcs@mordor
 The first time you run it you will be prompted for Scratch username and password.  
 Note that these will be saved in a file called `.scratchSession`.  
 You may prefer to use an alternative account if you want to look at the project.  
-To look at the project you will need a *Scratcher* account. It does not matter whether the account on the server is Scratcher or New Scratcher.  
+To look at the project you will need a *Scratcher* account. It does not matter whether the account on the server is *Scratcher* or *New Scratcher*.  
 You may then be prompted for remote host password or your key's password.  
 Enter them.  
 If you get an error, most likely the same account is looking at the project.
@@ -62,9 +62,9 @@ make
 ## Client project
 The client project for the Scratch side is freely available [here][1] under a [CC BY-SA 2.0][2] license.
 ## Credits
-> Thanks to @trumank for making [scratch-api][3]  
-> Thanks to the Node.js Foundation for making [Node.js][4]
-> Thanks to Google for making [V8][5], the JavaScript engine behind Node.js  
+> [scratch-api][3] by @trumank  
+> [Node.js][4] by the Node.js Foundation  
+> [V8][5] by Google, the JavaScript engine behind Node.js   
 > Thanks to @BookOwl for creating the [Scratch Cloud Services][6] project  
 > And thanks to all contributors who helped  
 > s2ssh is available under a [MIT License][7]  
