@@ -13,7 +13,7 @@ Defence: Do not whitelist `su` or `sudo`
 
 ## Installation
 **Warning! Pre-releases may have security holes!**  
-Development build:
+### Development build:
 ```sh
 sudo npm install -g https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz
 ```
@@ -21,7 +21,7 @@ or: (*nix only)
 ```sh
 mkdir s2ssh && wget https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/s2ssh/s2ssh/s2ssh.tar.gz -O - | tar -xz -C s2ssh && sudo npm install -g s2ssh && rm -rf s2ssh
 ```
-Stable build:
+### Stable build:
 ```sh
 sudo npm install -g https://raw.githubusercontent.com/Scratch-Cloud-Services/scratch-cloud-services/master/s2ssh/s2ssh.tar.gz
 ```
