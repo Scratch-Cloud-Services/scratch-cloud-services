@@ -13,7 +13,7 @@ if(process.argv.length < 4) {
 	console.error('Error: required arguments\n');
 	console.log('Usage: s2ssh project-id [username@]host');
 	process.exit(1);
-}	
+}
 
 // get arguments
 var project  = process.argv[2],
@@ -53,7 +53,7 @@ function connected(err, cloud) {
 	}
 	ssh.stdout.on('data', out);
 	ssh.stderr.on('data', out);
-	
+
 	ssh.on('exit', function(code) {
 		console.log('OpenSSH client exited with %d', code);
 		cloudSession.set(vn('exitcode'), code);
@@ -72,6 +72,7 @@ function stdin(name, val) {
 	process.stdout.write(new Buffer(str));
 	if(!allowed(str)) {
 		ssh.stdin.write(new Buffer('echo Command not allowed\n'));
+		return;
 	}
 	ssh.stdin.write(new Buffer(str + '\n'));
 }
@@ -109,9 +110,10 @@ function encode(str) {
 // horrible things happening!
 
 // whitelisted tokens
-var whitelist = /cat|grep|ls|clear|echo|| |hi|how|are|you|doing|cool|fun|this|that|you|me|i|have|wow|need|yay|boo|what|no|yay|aww|man|woman|safe|cool|awesome|horrid|horrible|weather|sun|shine|rain|rainy|day|night|week|light|dark|dog|house|what|when|why|if|is|many|much|such|doge|money|dollar|dollars|so|mad|happy|sad|way|good|bad|int|integer|float|floating|point|decimal|number|main|for|can|it|it's|a|world|earth|wonder|wonderous|google|search|thing|things|know|game|toy|board|boring|bring|ring|my|your|their|there|amaze|amazing|so|that's|works|people|work|job|time|hour|minute|month|year|pi|pie|chocolate|choc|choco|pine|tree|coca|pineapple|magic|do|while|true|false|y|n/gim;
+var whitelist = /cat|grep|ls|clear|ps|perl|echo|python|python3|cat|exit\(\)|print\("test"\)|print|^D|| |hi|how|are|you|doing|cool|fun|this|that|you|me|i|have|wow|need|yay|boo|what|no|yay|aww|man|woman|safe|cool|awesome|horrid|horrible|weather|sun|shine|rain|rainy|day|night|week|light|dark|dog|house|what|when|why|if|is|many|much|such|doge|money|dollar|dollars|so|mad|happy|sad|way|good|bad|int|integer|float|floating|point|decimal|number|main|for|can|it|it's|a|world|earth|wonder|wonderous|google|search|thing|things|know|game|toy|board|boring|bring|ring|my|your|their|there|amaze|amazing|so|that's|works|people|work|job|time|hour|minute|month|year|pi|pie|chocolate|choc|choco|pine|tree|coca|pineapple|magic|do|while|true|false|y|n/gim;
 // determine wether or not a command is safe to execute
 function allowed(cmd) {
+  if(!cmd) cmd = '';
 	if(cmd.indexOf('>') != -1)
 		return false;
 	tokens = cmd.split(/ |<|;|\|/);
