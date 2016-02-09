@@ -1,0 +1,20 @@
+{
+  "name": "st-tweets",
+  "version": "0.1.0",
+  "description": "read ST tweets on Scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "nodejs index.js"
+  },
+  "dependencies": {
+    "scratch-api": ">=1.1.2"
+  },
+  "keywords": [
+    "scratch",
+    "st",
+    "tweets"
+  ],
+  "author": "Jonathan50",
+  "license": "MIT"
+}
