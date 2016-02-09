@@ -10,5 +10,6 @@ Scratch.UserSession.load(function(err, user) {
 function cloudSession(err, cloud) {
   if(err)
     throw err;
+  var tweet = 'test tweet...'
   cloud.set(String.fromCharCode(2601) + ' tweet', tweet);
 }
