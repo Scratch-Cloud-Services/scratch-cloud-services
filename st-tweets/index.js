@@ -16,7 +16,11 @@ function cloudSession(err, cloud) {
     throw err;
   console.log('Connected to cloud!');
   var tweet = 'test tweet...';
-  cloud.set(String.fromCharCode(2601) + ' tweet', encode(tweet));
+  var encoded = encode(tweet);
+  console.log('Encoded tweet is %s', encoded);
+  cloud.set('☁ tweet', encoded);
+  console.log('Set variable, ending...');
+  cloud.end();
 }
 
 function decode(n) {
