@@ -15,7 +15,7 @@ function cloudSession(err, cloud) {
   if(err)
     throw err;
   console.log('Connected to cloud!');
-  var tweet = 'test tweet...';
+  var tweet = 'test tweet 2... :D';
   var encoded = encode(tweet);
   console.log('Encoded tweet is %s', encoded);
   cloud.set('☁ tweet', encoded);
