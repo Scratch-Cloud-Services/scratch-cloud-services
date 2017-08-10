@@ -51,6 +51,7 @@ scratch = scratchapi.ScratchUserSession(input("Scratch Username: "), getpass("Sc
 if not scratch.tools.verify_session():
     print("Error: could not log in!", file=sys.stderr)
     sys.exit(1)
+
 while True:
     get_tweet()
     time.sleep(config.config['delay'])
