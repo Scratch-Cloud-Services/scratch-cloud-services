@@ -14,4 +14,4 @@ By default st-tweets will run as a daemon. Currently this only works on Unix-lik
 Use the `-d` option to run st-tweets in the foreground. All output will go to stdout/stderr.
 
 Pass it the `-l` option followed by the file path of the log. When st-tweets daemonizes all output will go here (by default output goes to `/dev/null`).
-This option does not have any effect when the `-d` option is used.
+If the file does not exist it will be created. This option does not have any effect when the `-d` option is used.

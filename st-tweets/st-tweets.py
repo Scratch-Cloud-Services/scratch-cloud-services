@@ -19,40 +19,54 @@ def usage():
 
 def daemonize():
     """Daemonize the process."""
-    pid = os.fork()
-    if pid < 0:
-        print("Error: fork failed!", file=sys.stderr)
+    if os.name != "posix":
+        print("Error: Can't daemonize on %s system, use -d option" % os.name)
         sys.exit(1)
-    if pid > 0:
-        os._exit(0)
 
     # Redirect stdio to /dev/null and redirect stdout and stderr to log file
     fd = os.open("/dev/null", os.O_RDONLY)
     os.dup2(fd, 0)
     if fd > 2:
         os.close(fd)
-    fd = os.open(logfile, os.O_WRONLY | os.O_CREAT)
+    try:
+        fd = os.open(logfile, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
+    except OSError as err:
+        print("Error: Can't open log file: %s" % err.strerror, file=sys.stderr)
+        sys.exit(1)
     os.dup2(fd, 1)
     os.dup2(fd, 2)
     if fd > 2:
         os.close(fd)
 
+    pid = os.fork()
+    if pid < 0:
+        print("Error: Fork failed!", file=sys.stderr)
+        sys.exit(1)
+    if pid > 0:
+        os._exit(0)
+
+last_tweet = None
+
 def get_tweet():
     """Get a tweet and set cloud variables."""
+    global last_tweet
+
     url = 'https://twitter.com/' + config.config['user']
     response = urllib.request.urlopen(url)
     html = response.read()
     soup = BeautifulSoup(html, 'html.parser')
-
     tweets = soup.find_all('li', 'js-stream-item')
     tweet_text = soup.find_all('p', 'js-tweet-text')
     tweet_timestamps = soup.find_all('a', 'tweet-timestamp')
     tweet_links = soup.find_all('a', 'js-details')
 
     if len(tweet_text) < 1:
-        print("Error: no tweets!", file=sys.sterr)
+        print("Error: No tweets!", file=sys.sterr)
 
     text = tweet_text[0].get_text()
+    if last_tweet == text:
+        return
+    last_tweet = text
     timestamp = tweet_timestamps[0]['title']
     encoded = encode(text)
     print('Encoded tweet is %s' % encoded)
@@ -91,7 +105,7 @@ for opt, val in opts:
 scratch = scratchapi.ScratchUserSession(input("Scratch Username: "), getpass("Scratch Password: "))
 
 if not scratch.tools.verify_session():
-    print("Error: could not log in!", file=sys.stderr)
+    print("Error: Could not log in!", file=sys.stderr)
     sys.exit(1)
 
 if daemon:
